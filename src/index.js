@@ -1,4 +1,14 @@
-var newElement = document.createElement('p');
-newElement.innerHTML = 'test test 1 2 3';
+import React from 'react';
+import {render} from 'react-dom';
+import {Router, Route, browserHistory} from 'react-router';
 
-document.getElementById('main').appendChild(newElement);
+import appContainer from './container/appContainer';
+
+render(
+  <Router history={browserHistory}>
+    <Route path="/" component={appContainer}>
+    </Route>
+  </Router>
+  , 
+  document.getElementById('main')
+);
